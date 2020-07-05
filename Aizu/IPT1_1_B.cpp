@@ -6,6 +6,5 @@ int main() {
 
     cin >> x;
     cout << x*x*x <<endl;
-    system("pause");
     return 0;
 }
