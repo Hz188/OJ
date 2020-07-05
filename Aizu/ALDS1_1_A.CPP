@@ -28,10 +28,14 @@ void insertSort(int A[], int n)
 
         j = i - 1;
         value = A[i];
-        while (j >= 0 && A[j] > value)
+        // while (j >= 0 && A[j] > value)
+        // {
+        //     A[j + 1] = A[j];
+        //     j--;
+        // }
+        for (j = i - 1; j >= 0 && A[j] > value; j--)
         {
             A[j + 1] = A[j];
-            j--;
         }
         A[j + 1] = value;
         trace(A, n);
