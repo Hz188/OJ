@@ -11,20 +11,21 @@ int selectionSort(int A[], int N)
     for (i = 0; i < N - 1; i++)
     {
         minj = i;
-        for (j = i; j < N ; j++)
+        for (j = i; j < N; j++)
         {
             if (A[j] < A[minj])
             {
                 minj = j;
             }
         }
-        
-        temp = A[i];
-        A[i] = A[minj];
-        A[minj] = temp;
-        
-        if(i!=minj) 
+
+        if (i != minj)
+        {
+            temp = A[i];
+            A[i] = A[minj];
+            A[minj] = temp;
             swapCount++;
+        }
     }
     return swapCount;
 }

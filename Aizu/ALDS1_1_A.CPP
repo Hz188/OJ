@@ -26,7 +26,7 @@ void insertSort(int A[], int n)
     for (i = 1; i < n; i++)
     {
 
-        j = i - 1;
+        //j = i - 1;
         value = A[i];
         // while (j >= 0 && A[j] > value)
         // {
