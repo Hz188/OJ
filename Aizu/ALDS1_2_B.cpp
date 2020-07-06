@@ -1,38 +1,47 @@
 #include <iostream>
 using namespace std;
 
-// 使用flag的冒泡排序法
-int bubbleSort(int A[], int N) //包含N个元素的0起点的数组A
+int selectionSort(int A[], int N)
 {
-    int sw = 0;                // swap count
-    bool flag = 1;             // 存在顺序相反的两个元素
-    for (int i = 0; flag; i++) // i  未排序部分的起始位置下标
+    int swapCount = 0;
+    int minj;
+    int temp;
+    int i, j;
+
+    for (i = 0; i < N - 1; i++)
     {
-        flag = 0;
-        for (int j = N - 1; j >= i + 1; j--)
+        minj = i;
+        for (j = i; j < N ; j++)
         {
-            if (A[j] < A[j - 1])
+            if (A[j] < A[minj])
             {
-                int temp = A[j];
-                A[j] = A[j - 1];
-                A[j - 1] = temp;
-                flag = 1;
-                sw++;
+                minj = j;
             }
         }
+        
+        temp = A[i];
+        A[i] = A[minj];
+        A[minj] = temp;
+        
+        if(i!=minj) 
+            swapCount++;
     }
-
-    return sw;
+    return swapCount;
 }
 
 int main()
 {
-    int A[100], N;
-    cin >> N;
-    for (int i = 0; i < N; i++)
-        cin >> A[i];
+    int A[100];
+    int N;
 
-    int sw = bubbleSort(A, N);
+    cin >> N;
+
+    for (int i = 0; i < N; i++)
+    {
+        cin >> A[i];
+    }
+
+    int swapCount = selectionSort(A, N);
 
     for (int i = 0; i < N; i++)
     {
@@ -40,8 +49,10 @@ int main()
             cout << " ";
         cout << A[i];
     }
+
     cout << endl;
-    cout << sw;
+
+    cout << swapCount << endl;
 
     return 0;
 }
