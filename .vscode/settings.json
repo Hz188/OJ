@@ -19,6 +19,7 @@
 
     "C_Cpp.clang_format_sortIncludes": true,
     "files.associations": {
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "ostream": "cpp"
     }, // 格式化时调整include的顺序（按字母排序）
 }
