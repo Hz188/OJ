@@ -56,7 +56,7 @@ void print(int u){
         degreen++;
     if(T[u].r != NIL)
         degreen++;
-    cout << "degreen = " << degreen << ", ";
+    cout << "degree = " << degreen << ", ";
     cout << "depth = " << D[u] << ", ";
     cout << "height = " << H[u] << ", ";
 
