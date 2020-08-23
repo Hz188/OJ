@@ -110,7 +110,7 @@ Node *treeMinimum(Node *node)
     return node;
 }
 
-//寻找node为根的树的node的后继
+//寻找node的后继(中序遍历的node的后一个结点)即比node大的最小值
 Node *treeSuccessor(Node *node)
 {
     if (node->right != NIL)
