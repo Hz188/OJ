@@ -72,9 +72,9 @@ void inOrder(Node *node)
     {
         return;
     }
-    preOrder(node->left);
+    inOrder(node->left);
     cout << " " << node->key;
-    preOrder(node->right);
+    inOrder(node->right);
 }
 
 int main()
